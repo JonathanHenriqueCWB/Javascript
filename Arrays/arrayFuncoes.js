@@ -13,7 +13,7 @@
  */
 
 //let frutas = new Array('Abacaxi', 'Banana', 'Caronbola', 'Damasco')
-const frutas =['Abacaxi', 'Banana', 'Carambola', 'Damasco', 'Embaúba']
+const frutas = ['Abacaxi', 'Banana', 'Carambola', 'Damasco', 'Embaúba']
 
 //Retira o ultimo elemtneo do array
 frutas.pop()
@@ -47,4 +47,7 @@ console.log(maisFrutas1)
 const maisFrutas2 = frutas.slice(2, 4)
 console.log(maisFrutas2)
 
+// Removendo elementos com delete
+delete frutas[0]
+console.log(frutas)
 
