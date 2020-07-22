@@ -10,7 +10,7 @@ frutas.forEach(element => {
     console.log(element)
 });
 
-frutas.forEach(function(nome, indice){
+frutas.forEach(function (nome, indice) {
     console.log(`${indice} ${nome}`)
 })
 
