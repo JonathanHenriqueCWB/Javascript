@@ -1,5 +1,5 @@
-class Pessoa{
-    // Não é necessario declarar as propriedades
+// CLASS
+class Pessoa1{
     constructor(nome, sobrenome, idade){
         this.nome = nome
         this.sobrenome = sobrenome
@@ -10,15 +10,26 @@ class Pessoa{
         console.log('Meu nome é: ' + this.nome)        
     }
 }
-const p1 = new Pessoa('Marcos', 'Alves', 19)
+const p1 = new Pessoa1('Marcos', 'Alves', 19)
 p1.falar()
 
-// Função arrow
-const pessoa = nome =>{
+
+
+// FACTORY
+function pessoa2(nome, sobrenome){
     return{
-        falar: () => console.log('Meu nome é: ' + nome)
-        
+        nome,
+        sobrenome,
+        falar: function(){
+            console.log(`${nome} ${sobrenome}`)            
+        }
     }
 }
-const p2 = pessoa('João')
+
+const pessoa3 = nome =>{
+    return{
+        falar: () => console.log('Meu nome é: ' + nome)        
+    }
+}
+const p2 = pessoa3('João')
 p2.falar()
