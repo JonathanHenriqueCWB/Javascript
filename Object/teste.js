@@ -1,14 +1,14 @@
 const carro = {
-    _preco: 0,
-    _nome: '',
-
-    get nome(){return this._nome},
-    set nome(n){this._nome = n},
-
-    get preco(){ return this._preco},
-    set preco(p){ this._preco = p}
+    _valor: 0,
+    get valor(){
+        return this._valor
+    },
+    set valor(v){
+        if(v > 0){
+            this._valor = v
+        }
+    } 
 }
 
-carro.nome = 'Gol'
-carro.preco = 50000
-console.log(carro.nome, carro.preco)
+carro.valor = 50000
+console.log(carro.valor)
