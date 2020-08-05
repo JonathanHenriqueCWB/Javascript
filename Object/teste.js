@@ -1,14 +1,30 @@
 const carro = {
-    _valor: 0,
-    get valor(){
-        return this._valor
-    },
-    set valor(v){
-        if(v > 0){
-            this._valor = v
-        }
-    } 
-}
+    velocidade: 0,
+    velocidadeMaxima: 200,
 
-carro.valor = 50000
-console.log(carro.valor)
+    acelerar(delta){
+        (this.velocidade + delta <= this.velocidadeMaxima)? this.velocidade += delta : this.velocidade = this.velocidadeMaxima
+    },
+    status(){
+        return `Velocidade atual: ${this.velocidade}Km/h de ${this.velocidadeMaxima}Km/h`
+    }
+}
+const ferrari = {
+    nome: 'F40',
+    velocidadeMaxima: 340
+}
+Object.setPrototypeOf(ferrari, carro)
+
+ferrari.acelerar(230)
+console.log(ferrari.status())
+
+const  volvo = {
+    nome: 'V40',
+    status(){
+        return `${this.nome} ${super.status()}`
+    }
+}
+Object.setPrototypeOf(volvo, carro)
+
+volvo.acelerar(240)
+console.log(volvo.status())
