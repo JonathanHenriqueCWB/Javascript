@@ -5,7 +5,7 @@ const filha1 = Object.create(pai)
 filha1.nome = 'Bia'
 console.log(filha1.nome, filha1.corCabelo)
 
-const filha2 = Object.create(pai,{
+const filha2 = Object.create(pai, {
     nome: {value: 'Ana', writable: false, enumerable: true}
 })
 
@@ -19,8 +19,5 @@ console.log(Object.keys(filha2))
 
 // Imprimindo no forin
 for (const key in filha1) {
-    if (filha1.hasOwnProperty(key)) {
-        const element = filha1[key];
-        console.log(element)
-    }
+    (filha1.hasOwnProperty(key)) ? console.log(key) : console.log(`Por herança: ${key}`)   
 }
