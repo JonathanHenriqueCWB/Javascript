@@ -13,7 +13,7 @@ const produtos = [
     {nome: 'Teclado', preco: 199.90, fragil: false}
 ]
 
-const fragil = e => e.fragil == true
+const fragil = e => e.fragil
 const caro = e => e.preco > 900
 
 const produtosFiltrados = produtos.filter(fragil).filter(caro)
