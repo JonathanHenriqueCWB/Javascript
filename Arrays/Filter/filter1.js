@@ -1,11 +1,10 @@
-// Filter com array
+// FILTER COM ARRAY SIMPLES
 const frutas = ['Banana', 'Maça', 'Uva', 'Tomate', 'Abacaxi']
-const frutasFiltrada = frutas.filter(function(e){
-    return e != 'Tomate'
-})
+const frutasFiltrada = frutas.filter(f => f != 'Banana')
 console.log('Frutas: ', frutasFiltrada)
 
-// Filter com array de objetos
+
+// FILTER COM ARRAY DE OBJETOS
 const produtos = [
     {nome: 'Notebook', preco: 2999, fragil: true},
     {nome: 'Mouse', preco: 59.99, fragil: true},
@@ -21,12 +20,15 @@ const produtosFiltrados = produtos.filter(fragil).filter(caro)
 /*
 const produtosFiltrados = produtos.filter(function(p){
     return p.fragil === true && p.preco > 900
-})
+}) 
 */
 console.log('Produtos: ', produtosFiltrados)
 
 /**
- * Por padrão filter recebe tres parâmetros, o item atual, indice e o próprio array
- * Ambas propriedades podem ser utilizadas no filtro 
+ * Diferente do map que modifica, o filter so filtra os elementos 
+ * do array, e retorna um novo array com os elementos fitrados
+ * 
+ * Por padrão filter recebe tres parâmetros, o item atual, indice e o próprio array * 
+ * ambas propriedades podem ser utilizadas no filtro
  */
 
