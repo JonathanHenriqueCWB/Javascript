@@ -18,6 +18,6 @@ console.log(config.db)
 
 // Le os arquivos da pasta
 fs.readdir(__dirname, (err, arquivos) =>{
-    console.log('Conteudo da pasta')
+    console.log('Conteúdo da pasta')
     console.log(arquivos)
 })
