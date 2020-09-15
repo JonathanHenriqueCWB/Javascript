@@ -1,7 +1,23 @@
+// EXEMPLO 1
+const promessa = new Promise(function(outraFuncao){
+    outraFuncao('Tarefa executada!')
+})
 
+promessa.then(retornoOutraFuncao => console.log(retornoOutraFuncao)) // Passando uma Arrow Function
+promessa.then(function(retornoOutraFuncao){ // Passando uma Function
+    console.log(retornoOutraFuncao)
+})
 
+// EXEMPLO 2
+new Promise(function(outraFunction){
+    outraFunction({
+        nome: 'Jonathan Henrique',
+        sobrenome: 'Alves de Lima'
+    })
+}).then( args => args).then(n => n.nome).then(l => console.log(l[0]))
 
-let p = new Promise(function(cumprirPromessa){
+// EXEMPLO 3 COM VARIAS FUNÇÕES
+const p = new Promise(function(cumprirPromessa){
     cumprirPromessa(['Ana', 'Bia', 'Jose', 'Marcos'])
 })
 
@@ -13,6 +29,7 @@ p
     .then(minuscula)
     .then(console.log)
 
+// Padrão de declaração do Promises
 
 /*
     Promises é uma função que devolve uma promeça quando atendida
