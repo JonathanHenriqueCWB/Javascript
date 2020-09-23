@@ -1,5 +1,3 @@
-const { resolve } = require("path")
-
 function imprimir(tempo = 2000){
     return new Promise(resolve => {
         setTimeout(() => resolve('Função executada com sucesso!'), tempo)
