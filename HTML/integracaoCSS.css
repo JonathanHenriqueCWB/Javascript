@@ -1,0 +1,20 @@
+body{
+    background-color: #ccc;
+}
+
+/* Estilização para ID */
+#txtPrincipal {
+    font-size: 40px;
+    font-weight: bold;
+    background-color: #444;
+    color: #ffffff;
+    padding: 10px;
+}
+
+/* ESTILIZAÇÃO PARA CLASSES */
+.fundoVermelho{
+    background-color: red;
+}
+.negrito {
+    font-weight: bold;
+}
