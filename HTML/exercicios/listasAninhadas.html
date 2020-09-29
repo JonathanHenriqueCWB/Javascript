@@ -1,0 +1,106 @@
+<!-- <h1>Listas Aninhadas</h1>
+
+<ul class="tree">
+    <div onclick="abrefecha('back')">Backend</div>
+    <div id="back" style="display: none;">
+        <ul>
+            <li onclick="abrefecha('app')">App
+                <div id="app" style="display: none;">
+                    <ul>
+                        <li id="a">produtos.js</li>
+                        <li id="b">usuarios.js</li>
+                        <li id="c">venda.js</li>
+                    </ul>
+                </div>
+            </li>
+            <li onclick="abrefecha('conf')">Config
+                <div id="conf" style="display: none;">
+                    <ul>
+                        <li>banco.js</li>
+                        <li>rotas.js</li>
+                        <li>servidor.js</li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div onclick="abrefecha('front')">Fronte</div>
+    <div id="front" style="display: none;">
+        <ul>
+            <li onclick="abrefecha('pub')">Public
+                <div id="pub" style="display: none;">
+                    <ul>
+                        <li>app.css</li>
+                        <li>app.js</li>
+                        <li>index.html/li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</ul>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+
+<script>
+    function abrefecha(elemento/*<--agora recebe o id do elemento a mostrar/esconder*/) {
+        let ex = document.getElementById(elemento); //buscar elemento ao html com base no id
+
+        if (ex.style.display == "none") {
+            ex.style.display = "block";
+        } else {
+            ex.style.display = "none";
+        }
+    }
+</script> -->
+
+<h1>Lista aninhadas</h1>
+
+<ul class="tree">
+    <li><span folder>Backend</span>
+        <ul>
+            <li><span folder>App</span>
+                <ul>
+                    <li>produto.js</li>
+                    <li>usuario.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>
+            <li><span folder>Config</span>
+                <ul>
+                    <li>rota.js</li>
+                    <li>banco.js</li>
+                    <li>venda.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+
+    <li><span folder>Frontend</span>
+        <ul>
+            <li><span folder>Public</span>
+                <ul>
+                    <li>app.css</li>
+                    <li>app.js</li>
+                    <li>index.html</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    
+</ul>
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+
+<script>
+    document.querySelectorAll('[folder]').forEach(pasta =>{
+        pasta.onclick = function(e){
+
+            //Pega o proximo elemento e muda o display com operador ternario
+            const ul = pasta.nextElementSibling
+            const display = ul.style.display
+            ul.style.display = (display =='none') ? 'block':'none';
+
+        }
+    })
+</script>
