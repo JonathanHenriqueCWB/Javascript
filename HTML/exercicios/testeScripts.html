@@ -1,0 +1,27 @@
+<h2>Testando</h2>
+
+<ul>
+    <li><span onclick="inverter('categoria')">Categorias</span>
+        <ul id="categoria">
+            <li>Jogos</li>
+            <li>Videos</li>
+            <li>Promoção</li>
+            <li>Lançamentos</li>
+        </ul>
+    </li>
+    <li><span onclick="inverter('nomes')">Nomes</span>
+        <ul id="nomes">
+            <li>Jonas</li>
+            <li>Bia</li>
+            <li>Carla</li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+    function inverter(idElemento){
+        const elemento = document.getElementById(idElemento)
+        const display = elemento.style.display
+        elemento.style.display = (display == 'none')? 'block':'none'
+    }
+</script>
