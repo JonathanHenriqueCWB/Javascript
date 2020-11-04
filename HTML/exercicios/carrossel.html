@@ -1,0 +1,73 @@
+<h2>Carrossel com HTML e Javascript</h2>
+
+<div slider>    
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem2.jpg" 
+        alt="Descrição da imagem" width="513" height="342" title="Titulo da imagem">
+    </p>
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem2.gif" 
+        alt="Gif da cod3r" width="513" height="342" title="Gif da cod3r">
+    </p>
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png" 
+        alt="Rio de Janeiro" width="513" height="342" title="Rio">
+    </p>
+    <p class="texto">
+        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" 
+        alt="Avatar" height="50" title="Avatar">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut sit neque dolore ullam iste,
+        quis repellendus, repellat quibusdam molestias illo doloremque officia minima accusamus 
+        voluptatem similique tempora beatae commodi quidem.
+    </p>
+    <p class="cidade"></p>
+    <p>
+        <picture>
+            <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png"  media="(min-width: 600px)">
+            <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png">
+        </picture>
+    </p>
+</div>
+
+
+<style>
+    p {
+        position: absolute;
+        display: none;
+    }
+    .texto {
+        width: 400px;
+
+    }
+    .texto img{
+        margin-right: 10px;
+    }
+    .cidade {
+        width: 513px;
+        height: 342px;
+        background-image: url('http://files.cod3r.com.br/curso-web/imagem4.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 200%;
+    }
+</style>
+
+<script>
+    function mover(elem, inicio, fim, passo, callback){
+        const novoInicio = inicio - passo
+        if(novoInicio >= fim){
+            elem.style.left = novoInicio + 'px'
+            setTimeout(() => mover(elem, novoInicio, fim, passo, callback), 7) // Recursividade
+        }else {
+            callback()
+        }
+    }
+
+    const p = document.querySelector('[slider] > p')
+    p.style.display = 'block'
+
+    mover(p, 1500, -520, 5, ()=>{
+        console.log('Terminou')
+    })
+
+</script>
